@@ -29,6 +29,6 @@ double& Vector::operator[](int i) {
 	return elem[i];
 }
 
-int Vector::size() {
+int Vector::size() const {
 	return sz;
 }
