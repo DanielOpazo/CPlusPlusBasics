@@ -1,3 +1,4 @@
+#include <cstring>
 #include <stdexcept>
 #include "vector.h"
 
@@ -7,7 +8,12 @@ Vector::Vector(int s)
 		throw std::length_error{"Vector::Vector"};
 	}
 	elem = new double[s];
+	memset(elem, 0, s);
 	sz = s;
+}
+
+Vector::~Vector() {
+	delete[] elem;
 }
 
 double& Vector::operator[](int i) {
