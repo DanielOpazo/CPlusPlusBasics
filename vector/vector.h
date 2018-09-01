@@ -1,6 +1,6 @@
 class Vector {
 	public:
-		Vector(int s) : elem{new double[s]}, sz{s} {}
+		Vector(int s);
 		double& operator[](int i);
 		int size();
 	private:

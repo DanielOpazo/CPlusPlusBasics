@@ -8,4 +8,9 @@ int main(void) {
 	v[5] = 5;
 	cout << "vector size is " << v.size() << "\n";
 	cout << "vector at 5 is " << v[5] << "\n";
+	try {
+		cout << v[11];
+	} catch (out_of_range) {
+		cout << "caught out of range\n";
+	}
 }
