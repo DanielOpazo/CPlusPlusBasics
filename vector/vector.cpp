@@ -53,6 +53,22 @@ double& Vector::operator[](int i) {
 	return elem[i];
 }
 
+Vector::Vector(Vector&& v)
+	: elem{v.elem}, sz{v.sz} //point to v's dynamic memory
+{
+	v.elem = nullptr;
+	v.sz = 0;
+}
+
+Vector& Vector::operator=(Vector&& v) {
+	delete[] elem;
+	elem = v.elem;
+	sz = v.sz;
+	v.elem = nullptr;
+	v.sz = 0;
+	return *this;
+}
+
 int Vector::size() const {
 	return sz;
 }
